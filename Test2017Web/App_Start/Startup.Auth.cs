@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
@@ -55,8 +56,8 @@ namespace Test2017Web
             //   consumerSecret: "");
 
             app.UseFacebookAuthentication(
-               appId: "581931069211939",
-               appSecret: "ed048e3fc12888e97d6f6863914f5de1");
+               appId: ConfigurationManager.AppSettings["AppId"],//"",
+               appSecret: ConfigurationManager.AppSettings["AppSecret"]);// "");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
